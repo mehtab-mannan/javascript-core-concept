@@ -84,4 +84,4 @@ function callbackFunction(callback) {
     console.log('callback function', callback)
 }
 
-regularFunction(callbackFunction);
+// regularFunction(callbackFunction);

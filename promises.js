@@ -30,10 +30,10 @@ promise
     .then(addToCalendar)
     .then((result) => {
     // get resolve data here
-    console.log(JSON.stringify(result))
+    // console.log(JSON.stringify(result))
 }).catch((error) => {
     // get rejected data here
-    console.log(error.message)
+    // console.log(error.message)
 });
 
 const promise1 = Promise.resolve('promise 1 resolved');
@@ -43,5 +43,23 @@ const promise2 = new Promise((resolve, reject) => {
     }, 2000);
 })
 Promise.all([promise1, promise2]).then((res) => {
-    console.log(res);
+    // console.log(res);
+})
+
+let isValid = false;
+
+const tea = new Promise((resolve, reject) => {
+    if (isValid) {
+        resolve('tea is perfect')
+        
+    } else {
+        reject("not good")
+    }
+});
+
+tea.then((res) => {
+    // console.log(res)
+})
+    .catch(err => {
+    // console.log(err)
 })
