@@ -4,7 +4,7 @@ function add() {
 }
 // console.log(add());
 //---------rule no.1--------------
-// but a function can also get access from outside the function---like--
+// but a function can also get access from outside of the function---like--
 let a = 3;  // "a"is  global variable
 function add() {
     return a * a;
@@ -87,15 +87,15 @@ function added() {
 // console.log(added())
 
 const divide = (function () {
-    let counter = 0;
+    let counter = 2;
     return function () {
-        counter += 1;
+        counter -= 1;
         return counter;
     }
 })();
-// console.log(divide())
-// console.log(divide())
-// console.log(divide())
+console.log(divide())
+console.log(divide())
+console.log(divide())
 
 function business(capital) {
     return function (interest) {
@@ -103,4 +103,4 @@ function business(capital) {
     }
 }
 const businessCapital = business(100000);
-console.log(businessCapital(25));
+// console.log(businessCapital(25));
