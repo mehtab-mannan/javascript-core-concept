@@ -93,13 +93,29 @@ var obj3 = new Object();
 var obj = {
     a: 10,
     b: 40
-}
+};
+const arr = Object.values(obj); // --return an new array
+// console.log(arr)
 // var obj1 = obj;
 var obj1 = Object.assign({},obj);
 var obj1 = Object.assign([],obj);
 obj1.a = 'ten';
-console.log(obj)
-console.log(obj1)
+// console.log(obj)
+// console.log(obj1)
 // console.log(JSON.stringify(obj)===JSON.stringify(obj1))
 // console.log(obj)
 // console.log(obj1 == obj)
+
+const person1 = {
+    name: "John",
+    age: 30,
+    city: "New York"
+  };
+  
+  let txt = "";
+for (let x in person1) {
+    // console.log(x); // -----return keys
+    txt += person1[x] + " "; // ------return values
+    txt += person1.x + " "; // ----return undefined
+};
+//   console.log(txt)
