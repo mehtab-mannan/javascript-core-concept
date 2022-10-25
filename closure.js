@@ -87,15 +87,17 @@ function added() {
 // console.log(added())
 
 const divide = (function () {
-    let counter = 2;
     return function () {
+        let counter = 2;
         counter -= 1;
         return counter;
     }
-})();
-console.log(divide())
-console.log(divide())
-console.log(divide())
+});
+const result = divide();
+// console.log(result())
+// console.log(divide())
+// console.log(divide())
+// console.log(divide())
 
 function business(capital) {
     return function (interest) {
@@ -104,3 +106,110 @@ function business(capital) {
 }
 const businessCapital = business(100000);
 // console.log(businessCapital(25));
+
+
+function X() {
+    console.log('hello');
+    const bye='Bye'
+    setTimeout(() => {
+        console.log(bye)
+    }, 2000)
+    console.log('how are you')
+}
+// X();
+
+const closure = () => {
+    console.log('hello')
+    for (var i = 1; i <= 5; i++){
+        setTimeout(function () {
+            console.log(i)
+        },i*1000)
+    };
+    console.log('bye')
+}
+// closure()
+// to solve the above issue we can use "let" or the system bellow that is done.
+
+function y() {
+    console.log('hello');
+    for (var i = 0; i <= 5; i++){
+        function closure(a) {
+            setTimeout(function () {
+                console.log(a)
+            },a*1000)
+        }
+        // closure(i)
+    }
+};
+// y()
+
+
+// lexical scope------------------>>>>>>>>>>>>>
+var scope = "global scope";
+function check() 
+{
+    var scope = "local scope"; 
+    function f() 
+    { 
+        // console.log(scope)
+         return scope; 
+    }
+    // console.log(f())
+    // return f;
+    f();
+}
+// console.log(check)
+check();
+// example:2-----lexical scope-------------
+function foo() {
+var f = "foo";
+    function doo() {
+        // console.log(f);
+    }
+    doo();
+}
+foo();//print foo
+
+// let s1 = 'scope';
+function lexical() {  //parent function
+    let l = 'lexical';
+    s1='lk'
+    function scope() { //child function
+        let f = 'f';
+
+        console.log(s1)
+        console.log(f)
+    }
+    scope();
+    console.log(l)
+  
+}
+lexical()
+console.log(s1)
+
+// closure--------------->>>>>>>>>>>>>>>>>>>
+
+function foo() {
+
+    var f = "foo";
+    function doo() {
+        console.log(f);
+    }
+    return doo;
+}
+var afunct = foo();
+afunct();
+
+function add(num1) {
+
+    function addintern(num2) {
+        return num1 + num2;
+    }
+
+    return addintern;
+}
+
+var sum9 = add(7)(2);
+console.log(sum9);
+var sum99 = add(77)(22);
+console.log(sum99);

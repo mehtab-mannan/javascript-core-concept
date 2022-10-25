@@ -53,12 +53,12 @@ delete details.eyeColor; // delete property
 
 // traverse or loop-----------
 
-// var obj = {
-//     a: 10,
-//     b: 40,
-//     c: 12,
-//     d:20
-// }
+var obj = {
+    a: 10,
+    b: 40,
+    c: 12,
+    d:20
+}
 // var obj1 = {
 //     a: 10,
 //     b: 40,
@@ -66,8 +66,8 @@ delete details.eyeColor; // delete property
 //     d:20
 // }
 for (let prop in obj) {
-    // console.log(prop); // return property name
-    // console.log(obj[prop]) // return property value
+    console.log(prop); // return property name
+    console.log(obj[prop]) // return property value
 }
 
 // method of object--------------

@@ -43,4 +43,37 @@ function findMax(numbar) {
 }
 // console.log(findMax(numbar))
 
+const fruits = new Map([
+    ["apples", 500],
+    ["bananas", 300],
+    ["oranges", 200]
+]);
+// console.log(fruits.get("apples"));
 
+const fruits1 = new Map();
+// fruits.set('a', 10);
+
+// console.log(fruits.delete("apples"))
+// console.log(fruits.size)
+// console.log(fruits.clear())
+
+let text = '';
+fruits.forEach(function (value, key) {
+    text += key + ' = ' + value + ' ';
+});
+// let text = "";
+for (const x of fruits.entries()) {
+  text += x;
+};
+for (const x of fruits.keys()) {
+    text += x;
+};
+for (const x of fruits.values()) {
+    text += x;
+};
+let total = 0;
+for (const x of fruits.values()) {
+    total += x;
+};
+  
+console.log(text,' ',total);

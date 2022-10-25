@@ -114,3 +114,38 @@ function useFilter(arr,callback) {
 console.log(useFilter(arr, function (val) {
     return val % 2 === 1;
 }))
+
+// ----bind, call, apply --------------
+
+function person() {
+    console.log(this.name);
+}
+var obj1 = {
+    name: 'sumaia',
+    prof:'developer'
+}
+var obj2 = {
+    name: 'shaheen',
+    prof: 'data engineer'
+};
+// var binded1=(person.bind(obj1))
+// binded1();
+// var binded2=(person.bind(obj2))
+// binded2();
+// person.call(obj1);
+function add(a, b) {
+    return (a + b) * this.c;
+}
+
+var obj3 = {
+    c:3
+}
+var obj4 = {
+    c:4
+}
+// var res = add.call(obj3,3,5)
+// console.log(res)
+
+var useApply = add.apply(obj4, [3, 5]); // as a argument we have to use array
+console.log(useApply)
+

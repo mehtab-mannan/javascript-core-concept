@@ -44,5 +44,6 @@ Person.prototype.fullName = function () {
 }
 const person1 = new Person('sumaia', 'akter',30);
 
-console.log(person1.fullName())
 
+// console.log(person1.fullName())
+// console.log(person1)

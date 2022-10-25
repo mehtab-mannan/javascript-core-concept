@@ -46,14 +46,17 @@ Promise.all([promise1, promise2]).then((res) => {
     // console.log(res);
 })
 
-let isValid = false;
+let isValid = true;
 
 const tea = new Promise((resolve, reject) => {
     if (isValid) {
-        resolve('tea is perfect')
+        setTimeout(() => {
+            
+            resolve('tea is perfect')
+        },2000)
         
     } else {
-        reject("not good")
+        reject(new Error("not good"))
     }
 });
 
@@ -61,5 +64,7 @@ tea.then((res) => {
     // console.log(res)
 })
     .catch(err => {
-    // console.log(err)
-})
+        console.log(err)
+    });
+
+    // console.log('sumaia')

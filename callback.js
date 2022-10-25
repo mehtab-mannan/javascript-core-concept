@@ -12,7 +12,7 @@
 // higherOrderFunction(6, square);
 
 
-
+//-----------------------------
 // function doThing(x) {
 //    x('sumaia');
 // }
@@ -22,7 +22,7 @@
     
 // }
 // doThing(hello);
-
+//------------------------end-------------
 const task1 = (callback) => {
     console.log("task one");
     let name = 'sumaia'
@@ -75,13 +75,32 @@ const task5 = () => {
 // task2();
 // task3();
 
-function regularFunction(callback) {
-    // console.log('regular function')
-    callback('sumaia')
-}
+// function regularFunction(callback) {
+//     // console.log('regular function')
+//     callback('sumaia')
+// }
 
 function callbackFunction(callback) {
-    console.log('callback function', callback)
+    // console.log('callback function', callback)
 }
 
 // regularFunction(callbackFunction);
+
+
+// hello();
+function useCallback(callback) {
+    callback('sumaia');
+};
+function hello(name) {
+    // console.log('hello',name);
+};
+useCallback(hello)
+
+function square(x) {
+    // console.log(x*x)
+}
+
+function higherOrderFunction(num, fun) {
+    fun(num);
+}
+higherOrderFunction(6, square);
